@@ -26,6 +26,7 @@ def happy?
 end
 
 def happiness=(happiness)
+    #! create first order method
 	if happiness > 10
 		@happiness = 10
 	elsif happiness < 0
@@ -36,6 +37,7 @@ def happiness=(happiness)
 end
 
 def hygiene=(hygiene)
+    #! create first order method
 	if hygiene > 10
 		@hygiene = 10
 	elsif hygiene < 0
@@ -45,5 +47,28 @@ def hygiene=(hygiene)
 	end
 end
 
+def get_paid(amount)
+    @bank_account += amount
+    return "all about the benjamins"
+end
+
+def take_bath
+    @hygiene += 4
+    
+    self.hygiene = @hygiene
+
+    return "♪ Rub-a-dub just relaxing in the tub ♫"
+end
+
+def work_out
+    @happiness += 2
+    @hygiene -= 3
+
+    self.hygiene = @hygiene
+    self.happiness = @happiness
+
+    return "♪ another one bites the dust ♫"
+
+end
 
 end
