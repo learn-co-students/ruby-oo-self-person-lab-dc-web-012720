@@ -39,19 +39,16 @@ def get_paid(amount)
 end
 
 def take_bath
-    @hygiene += 4
-    
-    self.hygiene = @hygiene
+
+    self.hygiene = (self.hygiene + 4)
 
     return "♪ Rub-a-dub just relaxing in the tub ♫"
 end
 
 def work_out
-    @happiness += 2
-    @hygiene -= 3
-
-    self.hygiene = @hygiene
-    self.happiness = @happiness
+ 
+    self.hygiene = (self.hygiene - 3)
+    self.happiness = (self.happiness + 2)
 
     return "♪ another one bites the dust ♫"
 
