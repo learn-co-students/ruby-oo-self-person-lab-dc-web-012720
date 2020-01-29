@@ -12,39 +12,25 @@ end
 
 
 def clean?
-	if @hygiene > 7
-		return true
-	else false
-	end
+	@hygiene > 7 
 end
 
 def happy?
-	if @happiness > 7
-		return true
-	else false
-	end
+	@happiness > 7 
 end
+
+
 
 def happiness=(happiness)
     #! create first order method
-	if happiness > 10
-		@happiness = 10
-	elsif happiness < 0
-		@happiness = 0
-	else 
-		@happiness = happiness
-	end
+    happiness > 10 ? @happiness = 10 : happiness < 0 ? @happiness = 0 : @happiness = happiness
+
 end
 
 def hygiene=(hygiene)
     #! create first order method
-	if hygiene > 10
-		@hygiene = 10
-	elsif hygiene < 0
-		@hygiene = 0
-	else 
-		@hygiene = hygiene
-	end
+    hygiene > 10 ? @hygiene = 10 : hygiene < 0 ? @hygiene = 0 : @hygiene = hygiene
+
 end
 
 def get_paid(amount)
@@ -72,8 +58,7 @@ def work_out
 end
 
 def call_friend(friend)
-	@happiness += 3
-	self.happiness= @happiness
+	self.happiness=(self.happiness + 3)
 	friend.happiness=(friend.happiness+3)
 	return "Hi #{friend.name}! It's #{self.name}. How are you?"
 end
