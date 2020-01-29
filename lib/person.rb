@@ -71,4 +71,25 @@ def work_out
 
 end
 
+def call_friend(friend)
+	@happiness += 3
+	self.happiness= @happiness
+	friend.happiness=(friend.happiness+3)
+	return "Hi #{friend.name}! It's #{self.name}. How are you?"
+end
+
+def start_conversation(friend,topic)
+	if topic == "politics"
+		self.happiness=(self.happiness-2)
+		friend.happiness=(friend.happiness-2)
+		return "blah blah partisan blah lobbyist"
+	elsif topic == "weather"
+		self.happiness=(self.happiness+1)
+		friend.happiness=(friend.happiness+1)
+		return "blah blah sun blah rain"
+	else
+		"blah blah blah blah blah"
+	end
+end
+
 end
